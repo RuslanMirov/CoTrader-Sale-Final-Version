@@ -1,13 +1,16 @@
-# CoTrader-Crowdsale
 
 # Changes
 1) add ReduceLimit 
 
-2) add 2B to limit per 90 days
+2) add 2B to limit per 90 days by default
 
 3) add function block pauseTokens
 
-4) add SetLimitAmount Owner can change limit amount for iSLByMAL
+4) add SetLimitAmount and also view and block for this function
+
+5) add more test
+
+6) SetMintTimeLimit() and also view and block for this function
 
 # Additional functions
 
@@ -19,7 +22,7 @@ Owner can reduce bonus percent 25% by default each call reduces of 1%
 2 setRLTime() 
 Owner can change TimeLimit for IMLimit
 
-3 iSLByMAL()
+3 ISL()
 Owner can ADD 2B to limit, 100B maximum tokens limit
 TimeLimit for call by default one time in 90 days
 
@@ -35,8 +38,8 @@ Owner can mint new Tokens up to a certain limit 20B minLimit 100B maxLimit Owner
 7 ReturnLimit() 
 Get amount of limit for MintLimit function
 
-8 TimeWhenLimitIncrease()
-Return unix Date when Owner can call IMLimit()
+8 iSLDate()
+Return unix Date when Owner can call ISL()
 
 9 pauseTokens()
 Owner sale can pause Token only through contract sale
@@ -52,6 +55,16 @@ Owner can block call pauseTokens FOREVER
 
 13 isblockCallPauseTokens()
 view status about the possibility of calling pauseTokens()
+
+14 SetMintTimeLimit()
+Owner can change time limit for call ISL()
+
+15 blockSetMintTimeLimit()
+Owner can block SetMintTimeLimit() FOREVER
+set 2B by default after block
+
+16 isblockSetMintTimeLimit()
+View status about the possibility of calling of SetMintTimeLimit function
 
 # Install
 1) clone repo

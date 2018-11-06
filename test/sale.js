@@ -809,17 +809,5 @@ contract('Sale', function([_, wallet]) {
       const sum = await web3.fromWei(balance, 'ether') - 1400000;
       assert.equal(sum, 0);
     });
-
-    it('Owner can NOT call more then 25 even if percent more 24 because default rate is 1750000', async function() {
-      this.percent = 30;
-      for (var i = 0; i < 25; i++) {
-        await this.sale.ReduceRate({
-          from: _
-        }).should.be.fulfilled;
-      }
-      await this.sale.ReduceRate({
-        from: _
-      }).should.be.rejectedWith(EVMRevert);
-    });
   });
 });

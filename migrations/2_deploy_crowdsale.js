@@ -72,7 +72,7 @@ module.exports = function(deployer) {
     // Transfer 2B to Vesting contract
     await token.transfer(COTVesting.address, amount);
     // transferOwnership of vesting to Gary
-    const vesting = await Token.at(COTVesting.address);
+    const vesting = await COTVesting.at(COTVesting.address);
     await vesting.transferOwnership(MainAddress);
 
     // Block tokens
@@ -80,7 +80,7 @@ module.exports = function(deployer) {
     // Deploy sale
     await deployer.deploy(COTCrowdsale, rate, ICOWallet, Token.address, limit, cap, percent, ICOrate, timeLimit, timeForISL);
     // transferOwnership of Sale to Gary
-    const sale = await Token.at(COTCrowdsale.address); //TODO: uncoment me
+    const sale = await COTCrowdsale.at(COTCrowdsale.address); //TODO: uncoment me
     await sale.transferOwnership(MainAddress); //TODO: uncoment me
     // transferOwnership of token to sale contract
     await token.transferOwnership(COTCrowdsale.address);
